@@ -3,36 +3,37 @@ import {
   MapPin,
   Settings,
   BriefcaseBusiness
-} from "lucide-react";
-import type { NavItem, NavSection, RouteMatcher } from "@/types/navigation";
+} from 'lucide-react';
+import type { Route } from 'next';
+import type { NavItem, NavSection, RouteMatcher } from '@/types/navigation';
 
 export const navigation: NavSection[] = [
   {
-    title: "General",
+    title: 'General',
     items: [
       {
-        label: "Dashboard",
-        href: "/",
+        label: 'Dashboard',
+        href: '/',
         icon: LayoutDashboard
       },
       {
-        label: "Proyectos",
-        href: "/project",
+        label: 'Proyectos',
+        href: '/project',
         icon: BriefcaseBusiness
       },
       {
-        label: "Ubicaciones",
-        href: "/location",
+        label: 'Ubicaciones',
+        href: '/location',
         icon: MapPin
       }
     ]
   },
   {
-    title: "Sistema",
+    title: 'Sistema',
     items: [
       {
-        label: "Ajustes",
-        href: "/settings",
+        label: 'Ajustes',
+        href: '/settings',
         icon: Settings
       }
     ]
@@ -41,13 +42,13 @@ export const navigation: NavSection[] = [
 
 export const dynamicRoutes: RouteMatcher[] = [
   {
-    title: "Detalle de proyecto",
-    description: "Gestiona estados, escenas y responsables del proyecto.",
+    title: 'Detalle de proyecto',
+    description: 'Gestiona estados, escenas y responsables del proyecto.',
     pattern: /^\/project\/[\w-]+$/
   },
   {
-    title: "Detalle de ubicación",
-    description: "Revisa información acústica y notas del lugar.",
+    title: 'Detalle de ubicación',
+    description: 'Revisa información acústica y notas del lugar.',
     pattern: /^\/location\/[\w-]+$/
   }
 ];
@@ -72,21 +73,21 @@ export function resolveRoute(pathname: string): RouteMatcher {
   }
 
   return {
-    title: "SoundScouting",
-    description: "Explora y coordina recursos de sonido en campo."
+    title: 'SoundScouting',
+    description: 'Explora y coordina recursos de sonido en campo.'
   };
 }
 
-function getRouteDescription(href: string | undefined): string | undefined {
+function getRouteDescription(href: Route | undefined): string | undefined {
   switch (href) {
-    case "/":
-      return "Resumen general de proyectos y sesiones de grabación.";
-    case "/project":
-      return "Administra proyectos, equipos y necesidades de rodaje.";
-    case "/location":
-      return "Consulta ubicaciones y condiciones de audio.";
-    case "/settings":
-      return "Configura preferencias del sistema y notificaciones.";
+    case '/':
+      return 'Resumen general de proyectos y sesiones de grabación.';
+    case '/project':
+      return 'Administra proyectos, equipos y necesidades de rodaje.';
+    case '/location':
+      return 'Consulta ubicaciones y condiciones de audio.';
+    case '/settings':
+      return 'Configura preferencias del sistema y notificaciones.';
     default:
       return undefined;
   }
