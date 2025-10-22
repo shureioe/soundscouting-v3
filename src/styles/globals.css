@@ -3,6 +3,32 @@
 @tailwind utilities;
 
 :root {
+  --font-inter: 'Inter', 'Inter var', 'system-ui', sans-serif;
+  --background: 0 0% 100%;
+  --foreground: 224 71% 4%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 71% 4%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --primary: 199 89% 48%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 222 14% 16%;
+  --secondary-foreground: 210 40% 96%;
+  --accent: 221 13% 18%;
+  --accent-foreground: 210 40% 96%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 199 89% 48%;
+  --radius: 0.75rem;
+  color-scheme: light;
+}
+
+:root[class~='dark'] {
+  --font-inter: 'Inter', 'Inter var', 'system-ui', sans-serif;
   --background: 222 47% 11%;
   --foreground: 210 40% 98%;
   --muted: 215 25% 19%;
@@ -22,10 +48,6 @@
   --destructive: 0 62% 54%;
   --destructive-foreground: 210 40% 98%;
   --ring: 199 89% 48%;
-  --radius: 0.75rem;
-}
-
-.dark {
   color-scheme: dark;
 }
 
@@ -35,7 +57,7 @@ body {
 }
 
 body {
-  @apply bg-background text-foreground antialiased;
+  @apply bg-background text-foreground antialiased font-sans;
 }
 
 main {

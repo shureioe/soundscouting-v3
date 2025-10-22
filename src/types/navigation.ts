@@ -1,15 +1,16 @@
-import type { LucideIcon } from "lucide-react";
+import type { Route } from 'next';
+import type { LucideIcon } from 'lucide-react';
 
 export type RouteMatcher = {
   title: string;
   description?: string;
-  href?: string;
+  href?: Route;
   pattern?: RegExp;
 };
 
 export type NavItem = {
   label: string;
-  href: string;
+  href: Route;
   icon: LucideIcon;
 };
 
