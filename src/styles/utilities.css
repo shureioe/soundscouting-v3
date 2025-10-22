@@ -1,0 +1,9 @@
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg;
+  }
+
+  .section-heading {
+    @apply text-2xl font-semibold tracking-tight text-foreground;
+  }
+}
